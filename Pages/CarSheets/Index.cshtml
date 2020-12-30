@@ -1,0 +1,72 @@
+﻿@page
+@model CarSheets_ServiceAuto.Pages.CarSheets.IndexModel
+
+@{
+    ViewData["Title"] = "Foi auto";
+}
+
+<h3>Index foi auto</h3>
+
+<p>
+    <a asp-page="Create">Adauga foaie auto</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarSheet[0].Customer.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarSheet[0].CarModel.carModelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarSheet[0].nrInmatriculare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarSheet[0].nrIdentificareTalon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarSheet[0].descriereDefectiuni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarSheet[0].totalPlata)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarSheet[0].luniGarantie)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CarSheet) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarModel.carModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nrInmatriculare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nrIdentificareTalon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descriereDefectiuni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalPlata)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.luniGarantie)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editare</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Stergere</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

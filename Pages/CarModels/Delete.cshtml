@@ -1,0 +1,25 @@
+﻿@page
+@model CarSheets_ServiceAuto.Pages.CarModels.DeleteModel
+
+@{
+    ViewData["Title"] = "Sterge marca";
+}
+
+<h4>Sunteti sigur ca doriti sa stergeti aceasta marca de masini?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarModel.carModelName)
+        </dd>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.CarModel.carModelName)
+        </dt>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="CarModel.ID" />
+        <input type="submit" value="Sterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Inapoi la lista</a>
+    </form>
+</div>

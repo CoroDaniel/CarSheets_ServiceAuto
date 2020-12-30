@@ -1,0 +1,54 @@
+﻿@page
+@model CarSheets_ServiceAuto.Pages.CarSheets.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalii";
+}
+
+<h3>Detaii foaie auto</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarSheet.CarModel.carModelName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarSheet.CarModelId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarSheet.nrInmatriculare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarSheet.nrInmatriculare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarSheet.nrIdentificareTalon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarSheet.nrIdentificareTalon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarSheet.descriereDefectiuni)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarSheet.descriereDefectiuni)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarSheet.totalPlata)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarSheet.totalPlata)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarSheet.luniGarantie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarSheet.luniGarantie)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CarSheet.ID">Editare</a> |
+    <a asp-page="./Index">Inapoi la lista</a>
+</div>

@@ -1,0 +1,62 @@
+﻿@page
+@model CarSheets_ServiceAuto.Pages.CarSheets.CreateModel
+
+@{
+    ViewData["Title"] = "Adauga foaie auto";
+}
+
+<h3>Adauga foaie auto</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <label asp-for="CarSheet.CustomerId" class="control-label">Client</label>
+            <select asp-for="CarSheet.CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+            <span asp-validation-for="CarSheet.CustomerId" class="text-danger"></span>
+
+            <label asp-for="CarSheet.CarModelId" class="control-label">Marca Masina</label>
+            <select asp-for="CarSheet.CarModelId" class="form-control" asp-items="ViewBag.CarModelId"></select>
+            <span asp-validation-for="CarSheet.CarModelId" class="text-danger"></span>
+
+            <div class="form-group">
+                <label asp-for="CarSheet.nrInmatriculare" class="control-label"></label>
+                <input asp-for="CarSheet.nrInmatriculare" class="form-control" />
+                <span asp-validation-for="CarSheet.nrInmatriculare" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarSheet.nrIdentificareTalon" class="control-label"></label>
+                <input asp-for="CarSheet.nrIdentificareTalon" class="form-control" />
+                <span asp-validation-for="CarSheet.nrIdentificareTalon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarSheet.descriereDefectiuni" class="control-label"></label>
+                <input asp-for="CarSheet.descriereDefectiuni" class="form-control" />
+                <span asp-validation-for="CarSheet.descriereDefectiuni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarSheet.totalPlata" class="control-label"></label>
+                <input asp-for="CarSheet.totalPlata" class="form-control" />
+                <span asp-validation-for="CarSheet.totalPlata" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarSheet.luniGarantie" class="control-label"></label>
+                <input asp-for="CarSheet.luniGarantie" class="form-control" />
+                <span asp-validation-for="CarSheet.luniGarantie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adauga" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Inapoi la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
