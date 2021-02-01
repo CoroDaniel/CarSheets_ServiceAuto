@@ -3,14 +3,16 @@ using CarSheets_ServiceAuto.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarSheets_ServiceAuto.Migrations
 {
     [DbContext(typeof(CarSheets_ServiceAutoContext))]
-    partial class CarSheets_ServiceAutoContextModelSnapshot : ModelSnapshot
+    [Migration("20210201131601_Customer2")]
+    partial class Customer2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,8 +95,8 @@ namespace CarSheets_ServiceAuto.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
 
-                    b.Property<string>("CustomerPhone")
-                        .HasColumnType("nvarchar(14)")
+                    b.Property<int>("CustomerPhone")
+                        .HasColumnType("int")
                         .HasMaxLength(14);
 
                     b.HasKey("ID");

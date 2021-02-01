@@ -3,14 +3,16 @@ using CarSheets_ServiceAuto.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarSheets_ServiceAuto.Migrations
 {
     [DbContext(typeof(CarSheets_ServiceAutoContext))]
-    partial class CarSheets_ServiceAutoContextModelSnapshot : ModelSnapshot
+    [Migration("20210201132444_Customer3")]
+    partial class Customer3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

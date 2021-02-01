@@ -16,10 +16,10 @@ namespace CarSheets_ServiceAuto.Models
         [Display(Name ="Numele si Prenumele")]
         public string CustomerName { get; set; }
 
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Numarul de telefon trebuie sa contina doar cifre si fara spatiu"), Required,
-         StringLength(14, MinimumLength = 10, ErrorMessage = "Minim 10 cifre, Maximum 12 cifre")]
+        [StringLength(14, MinimumLength = 10, ErrorMessage = "Minim 10 cifre, Maximum 14 cifre")]
+        [DataType(DataType.PhoneNumber)]
         [Display(Name ="Telefon")]
-        public int CustomerPhone { get; set; }
+        public string CustomerPhone { get; set; }
 
         [Display(Name="Adresa")]
         public string CustomerAddress { get; set; }
